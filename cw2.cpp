@@ -26,16 +26,19 @@ vector<double> hill_climbing(function<double(vector<double>)> f, function<bool(v
     uniform_real_distribution<> distrib_r(-0.1, 0.1);
 
     if (!f_domain(p))
-        throw std::invalid_argument("The p0 point must be in domain");
+        throw std::invalid_argument("The p0 point must be in domain!");
     for (int i = 0; i < iterations; i++)
     {
         auto p2 = p;
 
-        p[distrib(gen)] += distrib_r(gen);
-        double y2 = f(p2);
-        if (y2 < f(p))
+        p2[distrib(gen)] += distrib_r(gen);
+        if (f_domain(p2))
         {
-            p = p2;
+            double y2 = f(p2);
+            if (y2 < f(p))
+            {
+                p = p2;
+            }
         }
     }
     return p;
