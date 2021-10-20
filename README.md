@@ -1,2 +1,2 @@
 # NAI-ITN
-Mini projekty
+Mini projects

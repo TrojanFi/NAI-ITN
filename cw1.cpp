@@ -39,6 +39,6 @@ auto calculation(function<int(int)> f1, function<int(int)> f2, int n)
 int main()
 {
     vector<int> v = calculation(f1, f2, 403);
-    cout << "max_x = " << v[0] << ", max_y = " << v[1] << endl;
+    cout << " max_x = " << v[0] << ", max_y = " << v[1] << endl;
     return 0;
 }
